@@ -1,0 +1,21 @@
+{
+  "name": "secure-request",
+  "version": "1.0.0",
+  "main": "dist/secure-request.cjs.js",
+  "module": "dist/secure-request.esm.js",
+  "author": "Kelly Copley <copleykj@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "preconstruct build",
+    "release": "yarn build && npm publish"
+  },
+  "devDependencies": {
+    "@preconstruct/cli": "^2.1.5",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "node-fetch": "^3.2.4"
+  }
+}
