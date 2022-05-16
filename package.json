@@ -1,11 +1,10 @@
 {
-  "name": "secure-request",
-  "version": "1.0.0",
+  "name": "hmac-secure-request",
+  "version": "1.0.1",
   "main": "dist/secure-request.cjs.js",
   "module": "dist/secure-request.esm.js",
   "author": "Kelly Copley <copleykj@gmail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "preconstruct build",
     "release": "yarn build && npm publish"

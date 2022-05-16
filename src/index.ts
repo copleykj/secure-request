@@ -22,9 +22,13 @@ export const sendData = async ({ url, data, secret }: SendDataParams) => {
   return await response.json();
 }
 
-export const verifyData = (data: any, secret: string) => {
+interface verifyDataParams {
+  data: any,
+  secret: string,
+  signature: string
+}
+export const verifyData = ({ data, secret, signature }: verifyDataParams) => {
   const stringifiedData = JSON.stringify(data);
-  const signature = data.signature;
   const digest = createHmac('sha256', secret).update(stringifiedData).digest('hex');
   return digest === signature;
 }
