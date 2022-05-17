@@ -9,10 +9,10 @@ interface SendDataParams {
 
 export const sendData = async ({ url, data, secret }: SendDataParams) => {
   const stringifiedData = JSON.stringify(data);
-
+  const signature = createHmac('sha256', secret).update(stringifiedData).digest('hex');
   const body = JSON.stringify({
-    signature: createHmac('sha256', secret).update(stringifiedData).digest('hex'),
-    data: stringifiedData,
+    signature,
+    data,
   });
   const response = await fetch(url, {
     method: 'post',

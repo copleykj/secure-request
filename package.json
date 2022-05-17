@@ -1,6 +1,6 @@
 {
   "name": "hmac-secure-request",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/hmac-secure-request.cjs.js",
   "module": "dist/hmac-secure-request.esm.js",
   "author": "Kelly Copley <copleykj@gmail.com>",
