@@ -1,20 +1,26 @@
 {
   "name": "hmac-secure-request",
-  "version": "1.0.4",
-  "main": "dist/hmac-secure-request.cjs.js",
-  "module": "dist/hmac-secure-request.esm.js",
+  "version": "1.0.7",
+  "main": "dist/hmac-secure-request.js",
+  "module": "dist/hmac-secure-request.js",
+  "types": "dist/hmac-secure-request.d.ts",
   "author": "Kelly Copley <copleykj@gmail.com>",
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "build": "preconstruct build",
+    "build": "rollup -c",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@preconstruct/cli": "^2.1.5",
-    "typescript": "^4.6.4"
+    "@preconstruct/cli": "^2.2.1",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "rollup": "^2.77.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.16.7",
-    "node-fetch": "^3.2.4"
+    "@babel/preset-typescript": "^7.18.6",
+    "node-fetch": "^3.2.9"
   }
 }
