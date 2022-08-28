@@ -1,6 +1,6 @@
 {
   "name": "hmac-secure-request",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "dist/hmac-secure-request.js",
   "module": "dist/hmac-secure-request.js",
   "types": "dist/hmac-secure-request.d.ts",
