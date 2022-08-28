@@ -5,6 +5,7 @@ interface SendDataParams {
   url: string;
   data: any;
   secret: string;
+
 }
 
 export const sendData = async ({ url, data, secret }: SendDataParams) => {
@@ -26,9 +27,11 @@ interface verifyDataParams {
   data: any,
   secret: string,
   signature: string
+  debug?: boolean;
 }
-export const verifyData = ({ data, secret, signature }: verifyDataParams) => {
+export const verifyData = ({ data, secret, signature, debug = false }: verifyDataParams) => {
   const stringifiedData = JSON.stringify(data);
   const digest = createHmac('sha256', secret).update(stringifiedData).digest('hex');
+  debug && console.log(`digest: ${digest}`);
   return digest === signature;
 }
