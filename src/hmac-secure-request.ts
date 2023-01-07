@@ -5,10 +5,10 @@ interface SendDataParams {
   url: string;
   data: any;
   secret: string;
-
+  method?: string;
 }
 
-export const sendData = async ({ url, data, secret }: SendDataParams) => {
+export const sendData = async ({ url, data, secret, method = 'post' }: SendDataParams) => {
   const stringifiedData = JSON.stringify(data);
   const signature = createHmac('sha256', secret).update(stringifiedData).digest('hex');
   const body = JSON.stringify({
@@ -16,7 +16,7 @@ export const sendData = async ({ url, data, secret }: SendDataParams) => {
     data,
   });
   const response = await fetch(url, {
-    method: 'post',
+    method,
     body: JSON.stringify(body),
     headers: { 'Content-Type': 'application/json' }
   });
